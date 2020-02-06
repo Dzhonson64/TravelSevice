@@ -1,0 +1,429 @@
+
+body{
+    margin: 0;
+}
+.dropMenuListChild {
+    display: none;
+}
+body .background{
+    background-image: url("../img/background.png");
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+header .background{
+    background: rgba(0,0,0,0.6);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.top .buttonRebot{
+    transition: all 0.4s ease;
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 25px;
+    text-align: center;
+    width: 150px;
+    cursor: pointer;
+    border: 3px solid #ffffff;
+    color: #ffffff;
+    margin-right: 10px;
+    border-radius: 30px;
+}
+.top .buttonRebot:hover{
+    background-color: #ffffff;
+    box-shadow: 0 0 10px 0px #ffffff;
+    color: #0aa200;
+}
+.top .buttonStart{
+    transition: all 0.4s ease;
+    display: inline-block;
+    background: #0aa200;
+    padding: 10px 15px;
+    font-size: 25px;
+    text-align: center;
+    width: 150px;
+    cursor: pointer;
+    border: 3px solid #0aa200;
+    /*box-shadow: 0 0 10px 0px #0aa200;*/
+    border-radius: 30px;
+    color: #ffffff;
+}
+.top .buttonStart:hover{
+    box-shadow: 0 0 10px 0px #0aa200;
+    color: #ffffff;
+}
+.top{
+    position: relative;
+    color: #ffffff;
+    margin: 100px 0;
+}
+.top h1{
+    margin: 0;
+    font-size: 60px;
+    font-weight: 900;
+}
+
+.resultContent{
+    color: #ffffff;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+.content .forms{
+    display: flex;
+    align-items: stretch;
+}
+.content h3{
+    margin: 0;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+.content .forms .select a{
+    text-decoration: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    width: 100%;
+}
+.content .forms i{
+    margin: 0 10px;
+    font-size: 1rem;
+}
+.content label{
+    color: #ffffff;
+    font-size: 16px;
+}
+.content input{
+    background-color: transparent;
+    outline: none;
+    border: 1px solid #0aa200;
+}
+
+.content .form-control{
+    color: #000000;
+    border-radius: 30px;
+    border: 2px solid #ffffff;
+    font-size: 16px;
+    background-color: #ffffff;
+}
+.content .slct {
+	display: block;
+	border-radius: 5px;
+	border: 1px solid #cecece;
+	background-color: #F6F6f6;
+	width: 285px;
+	padding: 4px 15px 4px 10px;
+	color: #444;
+	background-position: 290px -145px;
+
+	/*
+		Супер финт обрезаем текст
+		чтобы не вылезал за рамку
+	*/
+	overflow: hidden;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;	
+
+}
+.content .slct.active {
+	border-radius: 5px 5px 0 0;
+	border-bottom: none;
+}
+.content .drop {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	border: 1px solid #cecece;
+	border-top: none;
+    background: #fff;
+}
+.content .drop li:first-child{
+    border-radius: 30px 0 0 0;
+}
+.content .drop li:last-child{
+    border-radius: 0 0 0 30px;
+}
+.content .drop li {
+    
+	list-style: none;
+	border-top: 1px dotted #e8e8e8;
+	cursor: pointer;
+	display: block;
+	color: #444;
+	padding: 4px 15px 4px 25px;
+	background-position: 10px -119px;
+}
+.content .drop li:hover {
+	background-color: #e8e8e8;
+	color: #222;
+}
+
+.content .days{
+    font-size: 17px;
+    color: #000000;
+}
+.content .days h3{
+    
+}
+.content .days p, .content .days .plus, .content .days .minus{
+    display: inline-block;
+}
+.content .days .plus, .content .days .minus{
+    text-align: center;
+    color: #0aa200;
+    cursor: pointer;
+}
+.content .tourists .select .result{
+    display: inline-block; 
+}
+.content .tourists .dropList{
+    
+}
+.content .tourists .dropList p{
+    display: block;
+}
+.content .tourists .dropList .button{
+    display: inline-block;
+    border: 1px solid #000000;
+    text-align: center;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.content .tourists .dropList .button.active{
+    cursor: default;
+    border: 1px solid #0aa200;
+    background-color: #0aa200;
+}
+
+.content .infoBLock{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.content .infoBLock .form{
+    width: 100%;
+}
+.content .formInput{
+    cursor: pointer;
+    padding: 15px 20px;
+    background-color: #ffffff;
+    color: #000000;
+    width: 100%;
+    border: 1px solid #e2e2e2;
+    position: relative;
+    height: 100px;
+}
+.content .formInput .result{
+    display: inline-block;
+}
+.content .dropBlock{
+   display: none;
+}
+.content .dropBlock.costBlock{
+    padding: 15px;
+    background-color: white;
+}
+.content .dropBlock.tour{
+    padding: 15px;
+    background-color: white;
+    color: #000000;
+}
+
+.content .extra p{
+    display: inline-block;
+    margin: 0;
+}
+.content .buttonExtra{
+    cursor: pointer;
+    margin-top: 40px;
+    text-decoration: underline;
+    transition: all 0.5s ease;
+}
+.content .buttonExtra:hover{
+    color:#0aa200;
+}
+.content .extra{
+    margin-top: 20px;
+    display: none;
+}
+.content .extra  .button{
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 25px;
+    text-align: center;
+    cursor: pointer;
+    border: 3px solid #ffffff;
+    color: #ffffff;
+    margin-right: 10px;
+    border-radius: 30px;
+    position: relative;
+    transition: all 0.4s ease;
+}
+.content .extra .button.active{
+    background: #0aa200;
+    border: 3px solid #0aa200;
+    box-shadow: 0 0 10px 0px #0aa200;
+}
+.content .extra .button:hover{
+    color: transparent;
+}
+.content .extra .button:hover .turnOn, .content .extra .button:hover .turnOff{
+    width: 100%;
+    opacity: 1;
+}
+
+.content .extra  .button .turnOff, .content .extra  .button .turnOn{
+    opacity: 0;
+    color: wheat;
+    transition: all 0.6s ease;
+    position: absolute;
+    background: #0aa200;
+    top: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.content .extra  .button .turnOn{
+    left: 0;
+}
+.content .extra  .button .turnOff{
+    right: 0;
+    display: none;
+}
+
+.content .extra .extrainfo p{
+    margin-right: 10px;
+}
+
+.resultContent {
+    margin-top: 100px;
+    color: #000000;
+    padding: 10px;
+    background: #ffffff;
+    display: none;
+}
+.resultContent .hotel{
+    display: none;
+}
+.resultContent .hotel img{
+    width: 100%;
+}
+.resultContent .hotel .stars{
+    color: rgb(232, 232, 10);
+    font-size: 1.2rem;
+}
+.resultContent .hotel .extraInfo {
+    position: absolute;
+    bottom: 20px;
+}
+.resultContent .hotel .extraInfo i{
+    color: #0aa200;
+    border: 1px solid #0aa200;
+    border-radius: 50%;
+    margin: 0 5px;
+    padding: 5px;
+    transition: all 0.5s ease;
+}
+.resultContent .hotel .extraInfo i:hover{
+    background-color: #0aa200;
+    color: #ffffff;
+}
+.resultContent .infoHotel .costHotel{
+    cursor: default;
+    display: flex;
+    justify-content: flex-end;
+}
+.resultContent .infoHotel .costHotel p{
+    border-radius: 30px;
+    color: #ffffff;
+    background-color: #0aa200;
+    font-size: 1.7rem;
+    margin: 0;
+    padding: 10px 15px;
+    transition: all 0.4s ease;
+   
+}
+.resultContent .infoHotel .costHotel p:hover{
+    background-color: #ffffff;
+    box-shadow: 0 0 10px 0px #0aa200;
+    color: #0aa200;
+}
+.resultContent .infoHotel .fa-globe-americas{
+    font-size: 0.8rem;
+    margin-right: 5px;
+}
+.resultContent .infoHotel h3{
+    color: #044600;
+}
+.resultContent .infoHotel h4{
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    color: #626467;
+}
+.resultContent .errorBlock {
+    display: none;
+}
+.resultContent .errorBlock p{
+    color: red;
+}
+.resultContent .toGet.dropMenuList .btnQestion{
+    border-radius: 15px;
+    border: 1px solid #cecece;
+    font-weight: 500;
+    margin: 15px 0;
+    padding: 10px 15px;
+    background-color: #F6F6f6;
+    transition: all 0.5s ease;
+}
+.resultContent .toGet.dropMenuList .btnQestion:hover{
+    cursor: pointer;
+    background-color: #ffffff;
+    border: 1px solid #797979;
+}
+
+
+.tourDays .day{
+    background: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+.tourDays .day .dayNumber{
+    border: 3px solid #000000;
+    display: inline;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.tourDays .day .line{
+    width: 200px;
+    height: 3px;
+    background-color: #000000;
+}
+
+.infoTourDays{
+    background-color: #ffffff;
+}
+.infoTourDays img {
+    width: 100%;
+}
+.infoTourDays p {
+    margin-bottom: 0;
+}
+.infoTourDays .timesheet{
+    /* list-style-type: none; */
+}

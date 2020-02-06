@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    
+    <title>TravelService</title>
+</head>
+<body>
+    <div class="background">
+        <div class="container">
+            <div class="top">
+                <h1>Travel Service</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam at illum voluptatem modi alias harum ducimus necessitatibus, quae repellat eveniet quibusdam tempora doloribus voluptatum unde rerum qui. Doloremque, eligendi. Eos?</p>
+                <div class="buttonRebot" onclick="reboot()">Reboot</div>
+                <div class="buttonStart" onclick="request()">Search</div>
+            </div>
+        </div>
+        
+        <section class="content">
+            <div class="container">
+                <div class="forms">
+
+                    <div class="col-md-3 d-flex p-0 flex-column">
+                            <div class="formInput">
+                                <h3><i class="fas fa-plane-departure"></i>Страна</h3>
+                                <div class="select">
+                                    <a href="javascript:void(0);" class="slct" id = "countryName">Выберите страну посещения</a>
+                                </div>
+                                    
+                            </div>
+                                <div class="dropBlock">
+                                    <ul class="drop">
+                                        <li>Россия</li>
+                                        <li>США</li>
+                                        <li>Великбритания</li>
+                                        <li>Тайланд</li>
+                                        <li>Кипр</li>
+                                        <li>Греция (Крит)</li>
+                                    </ul>
+                                    <input type="hidden" id="select" />
+                                </div>
+                    </div>
+                    <div class="col-md-3 d-flex p-0 flex-column">
+                            <div class="formInput">
+                                <h3><i class="fas fa-ruble-sign"></i>Стоимость</h3>
+                                <input class="form-control" name="price" id="price" disabled>
+                            </div>
+                            <div class="dropBlock costBlock">
+                                <div id="slider-range"></div>
+                            </div>
+                    </div>
+                    <div class="col-md-3 d-flex p-0 flex-column">
+                            <div class="formInput">
+                                <h3><i class="fas fa-calendar-day"></i>Кол-во дней</h3>
+                                <div class="days">
+                                    <span>от</span>
+                                    <div class="plus" onclick="plus(this)"><i class="fas fa-plus-circle"></i></div>
+                                    <p id = "from" >1</p>
+                                    <div class="minus" onclick="minus(this)"><i class="fas fa-minus-circle"></i></div>
+                                    <span>до</span>
+                                    <div class="plus" onclick="plus(this)"><i class="fas fa-plus-circle"></i></div>
+                                    <p id = "to" >2</p>
+                                    <div class="minus" onclick="minus(this)"><i class="fas fa-minus-circle"></i></div>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-md-3 d-flex p-0 flex-column">
+                        <div class="tourists">
+                            <div class="formInput" id = "selectList">
+                                    <h3><i class="fas fa-user-friends"></i>Кол-во людей</h3>
+                                    <div class="result" id = "resultOld"><span>1</span> взрослый</div>
+                                    <div class="result" id = "resultYoung"><span></span></div>
+                            </div>
+                            <div class="dropBlock tour">
+                                <div class="dropList" id = "dropList">
+                                    <div id="old">
+                                        <p>Взрослый</p>
+                                        <div class="button active" onclick="selectCountPeople(this)">1</div>
+                                        <div class="button" onclick="selectCountPeople(this)">2</div>
+                                        <div class="button" onclick="selectCountPeople(this)">3</div>
+                                        <div class="button" onclick="selectCountPeople(this)">4</div>
+                                    </div>
+                                    <div id="young">
+                                        <p>Детский</p>
+                                        <div class="button active" onclick="selectCountPeople(this)">0</div>
+                                        <div class="button" onclick="selectCountPeople(this)">1</div>
+                                        <div class="button" onclick="selectCountPeople(this)">2</div>
+                                        <div class="button" onclick="selectCountPeople(this)">3</div>
+                                        <div class="button" onclick="selectCountPeople(this)">4</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="buttonExtra" id = "buttonExtra">дополнительно</div>
+            <div class="extra">
+                    <div class="button" onclick="checkedExtraInfo(this)" id = "rusPlace">
+                        <div class="turnOn">Включить</div>
+                        <p>Часто посещаемые места русскими</p>
+                        <div class="turnOff">Выключить</div>
+                    </div>
+                    <div class="button" onclick="checkedExtraInfo(this)" id = "personTransport">
+                        <div class="turnOn">Включить</div>
+                        <p>С личным транспортом</p>
+                        <div class="turnOff">Выключить</div>
+                    </div>
+                    <div class="button" onclick="checkedExtraInfo(this)" id = "alhogol">
+                        <div class="turnOn">Включить</div>
+                        <p>Спиртные напитки</p>
+                        <div class="turnOff">Выключить</div>
+                    </div>
+                    
+            </div>
+            
+            
+            
+        </section>
+        <div class="resultContent" id = "resultContent">
+            <div class="container">
+                <div class="errorBlock" id = "errorBlock">
+                    <p>УПС!!!</p>
+                </div>
+                <div class="hotel">
+                    <div class="col-md-4"><img src="img/testHotel.jpg" alt="" srcset="" id="imgHotel"></div>
+                    <div class="col-md-8">
+                        <div class="infoHotel" id = "infoHotel">
+                            <h3>Название отеля</h3>
+                            <h4>Страна</h4>
+                            
+                            <div class = "stars"></div>
+                            <div class = "extraInfo"></div>
+                            <!-- <div class="toGet dropMenuList">
+                                <div class = "btnQestion">Как добараться?</div>
+                                <ul class="dropMenuListChild">
+                                    <li>sfasgg</li>
+                                    <li>asdg</li>
+                                    <li>sagsg</li>
+                                </ul>
+                            </div> -->
+                            <div class="costHotel">
+                                <p id = "costHotel">цена</p>
+                            </div>
+                            
+                        </div>
+                    </div>   
+                </div>
+            </div>
+        </div>
+        <div class="tourDays" id = "tourDaysBlock">
+            <div class="day" id = "daysPlace">
+                <!-- <div class="dayNumber" id="dayMove" onclick="searchMove(this)">
+                    1
+                </div>
+                <div class="line"></div>
+                <div class="dayNumber" id="dayMove" onclick="searchMove(this)">
+                    2
+                </div> -->
+            </div>
+        </div>
+        <div class="infoTourDays" id = "blockTourDays">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12" >
+                        <h4>Список достоприменчательностей, который вы посетите в <span id = "numDay"></span> день</h4>
+                        <ul id = "infoTourDays">
+                             <!-- <li class="dropMenuList">
+                                <p class = "title">Айос-Николаос</p>
+                                <div class="dropMenuListChild">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <img src="img/agios-nikolaos.jpg" alt="">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h3>Описание</h3>
+                                            <p>Небольшой город на севере Крита, известное и популярное туристическое направление. Предшественник современного Айос-Николаоса возник на месте древнего дорийского поселения Лато, но постепенно пришел в упадок. Новые жители появились уже в Средние века во время венецианского владычества. В 1646 году в результате войны с турками венецианцы сожгли поселение. В третий раз Айос-Николаос возродился в середине XIX столетия.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li></li>
+                            <li></li> -->
+                        </ul>
+                    </div>
+                   
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
